@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .email-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .header h1 {
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .greeting {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .test-section {
+            margin: 30px 0;
+        }
+        
+        .test-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+        
+        .test-card.science {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            box-shadow: 0 10px 25px rgba(79, 172, 254, 0.3);
+        }
+        
+        .test-card.science:hover {
+            box-shadow: 0 15px 35px rgba(79, 172, 254, 0.4);
+        }
+        
+        .test-card h3 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .test-card .icon-subject {
+            font-size: 30px;
+        }
+        
+        .test-link {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .test-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .science .test-link {
+            color: #4facfe;
+        }
+        
+        .instruction-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-left: 5px solid #f5576c;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .instruction-box p {
+            color: #663300;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .instruction-box .emoji {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .closing {
+            margin-top: 30px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+        
+        .signature p {
+            color: #333;
+            margin: 5px 0;
+        }
+        
+        .signature .name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .footer p {
+            color: white;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        
+        .best-wishes {
+            font-size: 18px;
+            color: #f5576c;
+            font-weight: 600;
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="icon">📚</div>
+            <h1>Test Assignment</h1>
+        </div>
+        
+        <div class="content">
+            <div class="greeting">
+                <p>Hey,</p>
+                <p>I hope you are doing well.</p>
+            </div>
+            
+            <div class="test-section">
+                <div class="test-card">
+                    <h3>
+                        <span class="icon-subject">🔢</span>
+                        Mathematics Test
+                    </h3>
+                    <a href="https://gemini.google.com/share/da191a513e75" class="test-link" target="_blank">
+                        Start Mathematics Test →
+                    </a>
+                </div>
+                
+                <div class="test-card science">
+                    <h3>
+                        <span class="icon-subject">🔬</span>
+                        Science Test
+                    </h3>
+                    <a href="https://gemini.google.com/share/658d881e2a0b" class="test-link" target="_blank">
+                        Start Science Test →
+                    </a>
+                </div>
+            </div>
+            
+            <div class="instruction-box">
+                <p>
+                    <span class="emoji">📸</span>
+                    After giving the Test, send me screenshots of your marks.
+                </p>
+            </div>
+            
+            <div class="best-wishes">
+                ✨ All the best! ✨
+            </div>
+            
+            <div class="signature">
+                <p>Regards,</p>
+                <p class="name">Soumodip Ghosh</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Good luck with your tests! 🌟</p>
+        </div>
+    </div>
+</body>
+</html>
